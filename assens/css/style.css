@@ -1,1 +1,1477 @@
+/*
 
+  Table Of Contents :
+  +-----+-----------------------------------------+
+  | NO. | Name                                    |
+  +-----+-----------------------------------------+
+  |  1. | BASIC                                   |
+  +-----+-----------------------------------------+
+  |  2. | NAVBAR                                  |
+  |  3. | JUMBOTRON HOME                          |
+  |  4. | ABOUT HOME                              |
+  |  5. | PORTFOLIO HOME                          |
+  |  6. | BLOG HOME                               |
+  |  7. | CONTACT                                 |
+  |  8. | FOOTER                                  |
+  |  9. | BACK TO TOP                             |
+  +-----+-----------------------------------------+
+  | 10. | JUMBOTRON ABOUT                         |
+  | 11. | ABOUT                                   |
+  | 12. | SKILL                                   |
+  | 13. | CERTIVICATE                             |
+  | 14. | COMMUNITY AND SUPPORT                   |
+  | 15. | BACK TO TOP TWO                         |
+  +-----+-----------------------------------------+
+  | 16. | JUMBOTRON PORTFOLIO                     |
+  | 17. | PORTFOLIO                               |
+  +-----+-----------------------------------------+
+
+*/
+
+/* 
+==================================================
+  1. BASIC
+==================================================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-two);
+  overflow-x: hidden !important;
+}
+
+a {
+  color: inherit;
+}
+
+:root {
+
+  /* color */
+  --color-zero: transparent;
+  --color-one: #000;
+  --color-two: #fff;
+  --color-three: #004487;
+  --color-four: #3232FF;
+  --color-five: #0080FF;
+  --color-six: #eee;
+  --color-seven: #D3D3D3;
+  --color-eight: #666666;
+  --color-nine: #474747;
+  --color-ten: #222222;
+  --color-eleven: #333333;
+  --color-twelve: #004487;
+  --color-therteen: #0080FF;
+  --color-fourteen: #999999;
+
+  /* Fonts */
+  --font-one: '';
+  --font-two: 'hoog0555';
+
+}
+
+@font-face {
+  font-family: hoog0555;
+  src: url(../fonts/hoog0555.ttf);
+}
+
+/*
+==================================================
+  2. NAVBAR
+==================================================
+*/
+
+.navbar{
+  transition: background-color .5s;
+  z-index: 99;
+  color: var(--color-one);
+  overflow-x: hidden;
+}
+
+.navbar a.navbar-brand{
+  opacity: 1;
+  font-family: var(--font-two);
+}
+
+.navbar a{
+  color: var(--color-one);
+  opacity: .8;
+  cursor: pointer;
+  font-family: var(--font-two);
+}
+
+.navbar a:hover{
+  opacity: 1;
+  color: var(--color-twelve);
+}
+
+.navbar a:hover hr{
+  opacity: 1;
+  background-color: var(--color-one);
+}
+
+.navbar a hr{
+  width: 20%;
+  height: 1px;
+  margin: 0 auto;
+  background-color: var(--color-two);
+  opacity: 0;
+  margin-top: -5px;
+}
+
+.navbar-custom {
+  background-color: var(--color-two);
+  color: var(--color-one);
+}
+
+.navbar-nav {
+  padding-bottom: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.navbar-nav li a{
+  opacity: 1;
+  color: var(--color-one) !important;
+  font-family: var(--font-two);
+}
+
+.navbar-nav li a.locate{
+  color: var(--color-twelve) !important;
+}
+
+.navbar-collapse{
+  transition: .5s;
+  transition-delay: .75s;
+  transition-timing-function: ease-in;
+}
+
+.navbar-toggler{
+  box-shadow: none !important;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.navbar-toggler span{
+  width: 30px;
+  height: 2.1px;
+  border-radius: 10px;
+  display: absolute;
+  background-color: var(--color-one);
+  margin: 3px;
+}
+
+.navbar-toggler span:nth-child(1){
+  transform-origin: center;
+  animation: navtogspan1 1s ease-in-out forwards;
+}
+
+.navbar-toggler.open span:nth-child(1){
+  transform-origin: center;
+  animation: navtogspan1hov 1s ease-in-out forwards;
+}
+
+.navbar-toggler span:nth-child(2){
+  transform-origin: center;
+  animation: navtogspan2 1s ease-in-out forwards;
+}
+
+.navbar-toggler.open span:nth-child(2){
+  transform-origin: center;
+  animation: navtogspan2hov 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+.navbar-toggler span:nth-child(3){
+  transform-origin: center;
+  animation: navtogspan3 1s ease-in-out forwards;
+}
+
+.navbar-toggler.open span:nth-child(3){
+  transform-origin: center;
+  animation: navtogspan3hov 1s ease-in-out forwards;
+}
+
+@keyframes navtogspan1 {
+  0%{
+    transform: translate(0, 6px) rotate(-45deg);
+  }
+  35%{
+    transform: translate(0, 6px) rotate(90deg);
+  }
+  45%{
+    transform: translate(0, 6px) rotate(90deg);
+  }
+  55%{
+    transform: translate(0, 6px) rotate(90deg);
+  }
+  65%{
+    transform: translate(0, 0px) rotate(0deg);
+  }
+  100%{
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes navtogspan1hov {
+  0%{
+    transform: translate(0, 0) rotate(0deg);
+  }
+  35%{
+    transform: translate(0, 6px) rotate(0deg);
+  }
+  45%{
+    transform: translate(0, 6px) rotate(-90deg);
+  }
+  55%{
+    transform: translate(0, 6px) rotate(-90deg);
+  }
+  65%{
+    transform: translate(0, 6px) rotate(-90deg);
+  }
+  100%{
+    transform: translate(0, 6px) rotate(-45deg);
+  }
+}
+
+@keyframes navtogspan2 {
+  0%{
+    opacity: 0;
+  }
+  45%{
+    opacity: 0;
+  }
+  55%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+@keyframes navtogspan2hov {
+  0%{
+    opacity: 1;
+  }
+  45%{
+    opacity: 0;
+  }
+  55%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes navtogspan3 {
+  0%{
+    transform: translate(0, -10px) rotate(45deg);
+  }
+  35%{
+    transform: translate(0, -10px) rotate(90deg);
+  }
+  45%{
+    transform: translate(0, -10px) rotate(90deg);
+  }
+  55%{
+    transform: translate(0, -10px) rotate(90deg);
+  }
+  65%{
+    transform: translate(0, -10px) rotate(0deg);
+  }
+  100%{
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes navtogspan3hov {
+  0%{
+    transform: translate(0, 0) rotate(0deg);
+  }
+  35%{
+    transform: translate(0, -10px) rotate(0deg);
+  }
+  45%{
+    transform: translate(0, -10px) rotate(-90deg);
+  }
+  55%{
+    transform: translate(0, -10px) rotate(-90deg);
+  }
+  65%{
+    transform: translate(0, -10px) rotate(-90deg);
+  }
+  100%{
+    transform: translate(0, -10px) rotate(45deg);
+  }
+} 
+
+/* Responsive */
+
+/* Small devices (portain phones, 576px and down) */
+@media screen and (max-width: 576px) {
+  .navbar-nav li a{
+    margin-top: 5px;
+  }
+
+  .navbar-nav-color {
+    background-color: var(--color-two);
+  }
+  .nav-link-color{
+    color: var(--color-two) !important;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+  .navbar-nav li a{
+    margin-top: 5px;
+  }
+
+  .navbar-nav-color {
+    background-color: var(--color-two);
+    color: var(--color-two);
+  }
+  .nav-link-color{
+    color: var(--color-two);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  .navbar-nav-color {
+    background-color: var(--color-two);
+    color: var(--color-two);
+  }
+  .nav-link-color{
+    color: var(--color-two);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  .navbar-nav-color {
+    background-color: var(--color-zero);
+    color: var(--color-one);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  .navbar-nav-color {
+    background-color: var(--color-zero);
+    color: var(--color-two);
+  }
+}
+
+/*
+==================================================
+  3. JUMBOTRON HOME
+==================================================
+*/
+
+.jumbotron-home {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-two);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.jumbotron-home .container {
+  z-index: 3 !important;
+}
+
+.jumbotron-home div:nth-child(1) img {
+  border-radius: 50%;
+  margin: auto;
+  z-index: 3 !important;
+  transition: 1s;
+}
+
+.jumbotron-home div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3 !important;
+}
+
+.jumbotron-home h1 {
+  font-family: var(--font-two);
+  transition: .5s;
+}
+
+.jumbotron-home h2 {
+  font-family: var(--font-two);
+  transition: .5s;
+}
+
+.jumbotron-home .row:nth-child(1) .row:nth-child(1) {
+  text-align: center;
+}
+
+.jumbotron-home .row:nth-child(1) .row:nth-child(1) a {
+  font-family: var(--font-two);
+  background-color: var(--color-four);
+  color: var(--color-two);
+  width: 100%;
+  margin: 10px auto;
+  transition: 1s;
+}
+
+.jumbotron-home a:hover {
+  color: var(--color-seven);
+}
+
+.tambahan {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.tambahan div:nth-child(1) {
+  width: 100%;
+  height: 35%;
+  background-color: var(--color-three);
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.tambahan div:nth-child(2) {
+  width: 400px;
+  height: 400px;
+  background-color: var(--color-three);
+  display: block;
+  position: absolute;
+  right: -200px;
+  bottom: -20px;
+  z-index: 2;
+  transform: rotate(45deg);
+}
+
+.tambahan div:nth-child(3),
+.tambahan div:nth-child(4),
+.tambahan div:nth-child(5) {
+  background-image: url('../icons/segitiga.png');
+  background-size: cover;
+  background-position: center;
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+.tambahan div:nth-child(3) {
+  top: 10%;
+  left: 10%;
+  height: 175px;
+  width: 175px;
+  animation: tambahandivtiga 30s linear infinite;
+}
+
+@keyframes tambahandivtiga {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tambahan div:nth-child(4) {
+  top: 50%;
+  left: 30%;
+  height: 250px;
+  width: 250px;
+  animation: tambahandivempat 30s linear infinite;
+}
+
+@keyframes tambahandivempat {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tambahan div:nth-child(5) {
+  top: 30%;
+  left: 80%;
+  height: 300px;
+  width: 300px;
+  animation: tambahandivlima 30s linear infinite;
+}
+
+@keyframes tambahandivlima {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+/* Responsive */
+
+/* Small devices (portain phones, 576px and down) */
+@media screen and (max-width: 576px) {
+
+  .jumbotron-home img {
+    width: 200px;
+  }
+
+  .jumbotron-home div:nth-child(2) {
+    text-align: center;
+  }
+
+  .jumbotron-home .row:nth-child(1) .row:nth-child(1) a {
+    width: 50%;
+    margin: 10px auto;
+  }
+
+  .tambahan div:nth-child(1) {
+    height: 25%;
+  }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+
+  .jumbotron-home img {
+    width: 250px;
+  }
+
+  .jumbotron-home div:nth-child(2) {
+    text-align: center;
+  }
+
+  .jumbotron-home .row:nth-child(1) .row:nth-child(1) a {
+    width: 50%;
+  }
+
+  .tambahan div:nth-child(1) {
+    height: 20%;
+  }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+
+  .jumbotron-home img {
+    width: 350px;
+  }
+
+  .jumbotron-home div:nth-child(2) {
+    text-align: center;
+  }
+
+  .jumbotron-home .row:nth-child(1) .row:nth-child(1) a {
+    width: 100%;
+  }
+
+  .tambahan div:nth-child(1) {
+    height: 20%;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+
+  .jumbotron-home img {
+    width: 350px;
+  }
+
+  .jumbotron-home div:nth-child(2) {
+    text-align: start;
+  }
+
+  .jumbotron-home .row:nth-child(1) .row:nth-child(1) a {
+    width: 100%;
+  }
+
+  .jumbotron-home .row:nth-child(1) .row:nth-child(1) a {
+    width: 100%;
+  }
+
+  .tambahan div:nth-child(1) {
+    height: 35%;
+  }
+
+  .tambahan div:nth-child(2) {
+    width: 500px;
+    height: 500px;
+    right: -250px;
+    bottom: -20px;
+  }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+
+  .jumbotron-home img {
+    width: 400px;
+  }
+
+  .jumbotron-home div:nth-child(2) {
+    text-align: start;
+  }
+
+  .jumbotron-home .row:nth-child(1) .row:nth-child(1) a {
+    width: 100%;
+  }
+
+  .jumbotron-home .row:nth-child(1) .row:nth-child(1) a {
+    width: 100%;
+  }
+
+  .tambahan div:nth-child(1) {
+    height: 35%;
+  }
+
+}
+
+/*
+==================================================
+  4. ABOUT HOME
+==================================================
+*/
+
+.about-home{
+  background-color: var(--color-two);
+  padding: 50px 0;
+  width: 100%;
+}
+
+.about-home .row:nth-child(1) h2{
+  text-align: center;
+  font-family: var(--font-two);
+  margin-bottom: 20px;
+}
+
+
+.about-home .row:nth-child(2) div:nth-child(1){
+  text-align: center;
+}
+
+.about-home .row:nth-child(2) div:nth-child(1) img{
+  width: 75%;
+  transition: 1s ease-in-out;
+}
+
+.about-home .row:nth-child(2) div:nth-child(2){
+  overflow-x: hidden !important;
+}
+
+.about-home .row:nth-child(2) div:nth-child(2) p{
+  font-family: var(--font-two);
+  text-indent: 10px;
+  text-align: justify;
+  width: 100%;
+  transition: 1s ease-in-out;
+}
+
+.about-home .row:nth-child(2) div:nth-child(2) a{
+  background-color: var(--color-five);
+  color: var(--color-two);
+  font-family: var(--font-two);
+  border-radius: 40px;
+  text-align: center;
+  border: 2px solid var(--color-five);
+  transition: .3s ease-in;
+  transition: 1s ease-in-out;
+}
+
+.about-home .row:nth-child(2) div:nth-child(2) a:hover{
+  background-color: var(--font-two);
+  color: var(--color-five);
+}
+
+/* Responsive */
+
+/* Small devices (portain phones, 576px and down) */
+@media screen and (max-width: 576px) {
+
+  .about-home .row:nth-child(2) div:nth-child(2) p:nth-child(1){
+    padding-top: 20px;
+  }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+
+  .about-home .row:nth-child(2) div:nth-child(2) p:nth-child(1){
+    padding-top: -20px;
+  }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+
+  .about-home .row:nth-child(2) div:nth-child(2) p:nth-child(1){
+    padding-top: -20px;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+
+  .about-home .row:nth-child(2) div:nth-child(2) p:nth-child(1){
+    padding-top: -20px;
+  }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+
+  .about-home .row:nth-child(2) div:nth-child(2) p:nth-child(1){
+    padding-top: -20px;
+  }
+
+}
+
+/*
+==================================================
+  5. PORTFOLIO HOME
+==================================================
+*/
+
+.portfolio-home{
+  background-color: var(--color-six);
+  padding: 50px 0;
+}
+
+.portfolio-home .row:nth-child(1) h2{
+  font-family: var(--font-two);
+  text-align: center;
+}
+
+.portfolio-home .row:nth-child(2){
+  padding: 20px 0;
+  margin: auto;
+  text-align: center;
+}
+
+.portfolio-home .row:nth-child(2) .card{
+  background-color: var(--color-seven);
+  margin: 10px auto;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  text-align: start;
+  padding: 20px;
+  min-height: 350px;
+}
+
+.portfolio-home .row:nth-child(2) a{
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.portfolio-home .row:nth-child(2) .card img{
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.portfolio-home .row:nth-child(2) .card p{
+  font-family: var(--font-two);
+}
+
+/*
+==================================================
+  6. BLOG HOME
+==================================================
+*/
+
+.blog-home{
+  background-color: var(--color-two);
+  padding: 50px 0;
+}
+
+.blog-home .row:nth-child(1) h2{
+  font-family: var(--font-two);
+  text-align: center;
+}
+
+.blog-home .row:nth-child(2){
+  padding: 20px 0;
+  margin: auto;
+  text-align: center;
+}
+
+.blog-home .row:nth-child(2) .card{
+  background-color: var(--color-seven);
+  margin: 10px auto;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  text-align: start;
+  padding: 20px;
+  min-height: 350px;
+}
+
+.blog-home .row:nth-child(2) a{
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.blog-home .row:nth-child(2) .card img{
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.blog-home .row:nth-child(2) .card p{
+  font-family: var(--font-two);
+}
+
+
+/*
+==================================================
+  7. CONTACT
+==================================================
+*/
+
+.contact{
+  background-color: var(--color-eight);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow-x: hidden;
+}
+
+.contact .contain{
+  margin: 10px auto;
+  background-color: var(--color-nine);
+  height: 100%;
+  border-radius: 10px;
+}
+
+.contact .contain h2{
+  text-align: start;
+  margin: 20px auto;
+  color: var(--color-two);
+  opacity: 0.5;
+  font-family: var(--font-two);
+  margin-left: 20px;
+}
+
+.contact .contain .row .form-floating input{
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  border-bottom: 2px solid;
+  outline: none;
+  margin: 10px auto;
+  color: var(--color-two);
+  box-shadow: none;
+}
+
+.contact .contain .row .form-floating textarea{
+  background-color: var(--color-nine);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  border-bottom: 2px solid;
+  outline: none;
+  background-image: none;
+  width: 100%;
+  min-height: 100px;
+  color: var(--color-two);
+}
+
+.contact .contain .row .form-floating label{
+  color: var(--color-two);
+  font-family: var(--font-two);
+  margin-left: 20px;
+  opacity: 0.75;
+}
+
+.contact .contain .row:nth-child(2) .form-floating label{
+  margin-left: 0;
+}
+
+.contact .contain .row:nth-child(3) .form-floating label{
+  margin-left: 10px;
+}
+
+.contact .contain .row .btn{
+  width: 25%;
+  margin: 20px;
+  background-color: var(--color-ten);
+  outline: none;
+  border: none;
+  font-family: var(--font-two);
+}
+
+/*
+==================================================
+  8. FOOTER
+==================================================
+*/
+
+footer{
+  background-color: var(--color-eleven);
+  color: var(--color-two);
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+footer h2{
+  font-family: var(--font-two);
+}
+
+footer h1{
+  font-family: var(--font-two);
+}
+
+.social-icon{
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon a{
+  background-color: var(--color-twelve);
+  color: white;
+  margin: 0 15px;
+  transform: rotate(45deg);
+  padding: 10px;
+  display: flex;
+  vertical-align: middle;
+  transform-origin: center;
+  border-radius: 5px;
+  transition: .5s;
+}
+
+.social-icon a svg{
+  width: 20px;
+  height: 20px;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  transition: .5s;
+  opacity: .7;
+}
+
+.social-icon a:hover{
+  transform: rotate(0deg);
+}
+
+.social-icon a:hover svg{
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+/*
+==================================================
+  9. BACKTOTOP
+==================================================
+*/
+
+.backtotop{
+  display: none;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  padding: 5px;
+  background-color: var(--color-therteen);
+  border-radius: 10px;
+  z-index: 9;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.backtotop svg{
+  transform: rotate(-90deg);
+  color: var(--color-two);
+  width: 30px;
+  height: 30px;
+  opacity: .7;
+  transition: .5s;
+}
+
+.backtotop:hover svg{
+  opacity: 1;
+}
+
+
+
+/*
+==================================================
+==================================================
+
+    ABOUT
+
+==================================================
+==================================================
+*/
+
+/*
+==================================================
+  10. JUMBOTRON ABOUT
+==================================================
+*/
+
+.jumbotron-about{
+  background-color: var(--color-three);
+  width: 100%;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.jumbotron-about h1{
+  color: var(--color-two);
+  text-align: center;
+  font-family: var(--font-two);
+}
+
+
+/*
+==================================================
+  11. ABOUT
+==================================================
+*/
+
+.about{
+  background-color: var(--color-two);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.about h2{
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: var(--font-two);
+}
+
+.about .group-2{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.about .group-2 .content{
+  width: 200px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+.about .group-2 .content img{
+  width: 100%;
+  border-radius: 10px;
+  margin: auto;
+  transition: 1s;
+  transform: scale(1.5);
+  filter: brightness(50%);
+}
+
+.about .group-2 .content:hover img{
+  transform: scale(1);
+  filter: brightness(100%);
+}
+
+.about .row:nth-child(3){
+  padding-top: 20px;
+  font-family: var(--font-two);
+  text-align: justify;
+  text-indent: 20px;
+}
+
+/* Responsive */
+
+/* Small devices (portain phones, 576px and down) */
+@media screen and (max-width: 576px) {
+
+  .about .group-2 .content{
+    width: 175px;
+    height: 175px;
+  }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+
+  .about .group-2 .content{
+    width: 200px;
+    height: 200px;
+  }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+
+  .about .group-2 .content{
+    width: 150px;
+    height: 150px;
+  }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+
+  .about .group-2 .content{
+    width: 150px;
+    height: 150px;
+  }
+
+}
+
+/* Extra large large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1400px) {
+
+  .about .group-2 .content{
+    width: 200px;
+    height: 200px;
+  }
+
+}
+
+/*
+==================================================
+  12. SKILL
+==================================================
+*/
+
+.skill{
+  background-color: var(--color-seven);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.skill h2{
+  text-align: center;
+  font-family: var(--font-two);
+}
+
+.skill .bars{
+  width: 90%;
+  margin: 5px auto;
+}
+
+.skill .bars .bars-data{
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-two);
+}
+
+.skill .bars .progress-bar{
+  width: 100%;
+  height: 20px;
+  background-color: var(--color-eight);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.skill .bars .progress-bar .progress-bar-persen{
+  height: 20px;
+  transition: 1s;
+  transition-delay: .5s;
+}
+
+.skill .bars .progress-bar .html{
+  background-color: #FF9021;
+}
+
+.skill .bars .progress-bar .css{
+  background-color: #59ADFF;
+}
+
+.skill .bars .progress-bar .javascript{
+  background-color: #FAE800;
+}
+
+.skill .bars .progress-bar .hacking{
+  background-color: #000000;
+}
+
+.skill .bars .progress-bar .networking{
+  background-color: #0000FF;
+}
+
+.skill .bars .progress-bar .editing{
+  background-color: #00ff00;
+}
+
+/*
+==================================================
+  13. CERTIVICATE
+==================================================
+*/
+
+.cert .group-1{
+  height: 300px;
+  background-color: var(--color-one);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: var(--color-two);
+  font-family: var(--font-two);
+}
+
+.cert .group-2{
+  background-color: var(--color-fourteen);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.cert .group-2 .row{
+  margin: auto;
+}
+
+.cert .group-2 .row div{
+  display: flex;
+  position: relative;
+  overflow: hidden !important;
+  margin: 10px auto;
+  transition: .5s;
+}
+
+.cert .group-2 img{
+  width: 100%;
+}
+
+.cert .group-2 .row div span{
+  width: 100%;
+  height: 500%;
+  background-color: rgba(0, 0, 0, .8);
+  color: var(--color-two);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: .5s;
+  font-family: var(--font-two);
+  overflow: hidden !important;
+}
+
+.cert .group-2 .row div:hover span{
+  opacity: 1;
+  height: 100%;
+}
+
+/*
+==================================================
+  14. COMMUNITY AND SUPPORT
+==================================================
+*/
+
+.community{
+  background-color: var(--color-one);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: var(--color-two);
+  text-align: center;
+  font-family: var(--font-two);
+}
+
+.community .group-2{
+  padding-top: 20px;
+  padding-bottom: 50px;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+}
+
+.community .group-2 img{
+  width: 350px;
+  margin: 10px 50px;
+  border-radius: 10px;
+}
+
+.community .group-2 .carousel ol li{
+  width: 10px;
+  height: 10px;
+}
+
+/*
+==================================================
+  15. BACK TO TOP TWO
+==================================================
+*/
+
+.backtotop-two{
+  display: block !important;
+  position: fixed !important;
+  right: 30px;
+  bottom: 30px;
+  padding: 5px;
+  background-color: var(--color-therteen);
+  background-image: none !important;
+  border-radius: 10px;
+  z-index: 99;
+  transition: .5s;
+  opacity: 0;
+  cursor: pointer;
+  transform: translateX(100px);
+}
+
+.backtotop-two svg{
+  transform: rotate(-90deg);
+  color: var(--color-two);
+  width: 30px;
+  height: 30px;
+  transition: .5s;
+  background-color: var(--color-therteen);
+}
+
+.backtotop-two:hover svg{
+  opacity: 1;
+}
+
+/*
+==================================================
+==================================================
+
+    PORTFOLIO
+
+==================================================
+==================================================
+*/
+
+/*
+==================================================
+  16. JUMBOTRON PORTFOLIO
+==================================================
+*/
+
+.jumbotron-portfolio{
+  background-color: var(--color-three);
+  width: 100%;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.jumbotron-portfolio h1{
+  color: var(--color-two);
+  text-align: center;
+  font-family: var(--font-two);
+}
+
+/*
+==================================================
+  17. PORTFOLIO
+==================================================
+*/
+
+.portfolio{
+  background-color: var(--color-six);
+  padding-bottom: 50px;
+}
+
+.portfolio .group-1{
+  text-align: center;
+}
+
+.portfolio .group-1 h2{
+  font-family: var(--font-two);
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+.portfolio .group-2 .card{
+  border: 2px solid var(--color-five);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  font-family: var(--font-two);
+}
+
+.portfolio .group-2 .card .left img{
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.portfolio .group-2 .card .right p{
+  text-align: justify;
+  font-family: 1em;
+  font-variant: small-caps;
+}
+.portfolio .group-2 .card .right svg{
+  width: 1em;
+  height: 1em;
+  align-items: center;
+}
+
+.portfolio .group-2 .card .right a.btn{
+  background-color: var(--color-five);
+  color: var(--color-two);
+  border-radius: 5px;
+}
+
+
+
+/* Responsive Template*/
+
+/* Small devices (portain phones, 576px and down) */
+@media screen and (max-width: 576px) {}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {}
+
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {}
